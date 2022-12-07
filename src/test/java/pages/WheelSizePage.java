@@ -1,9 +1,13 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
+import utils.WaitForHelper;
+
+import java.util.List;
 
 public class WheelSizePage extends BasePage{
 
@@ -20,7 +24,7 @@ public class WheelSizePage extends BasePage{
     @FindBy(linkText = "20\"")
     WebElement WheelSize20;
 
-    @FindBy(linkText = "19")
+    @FindBy(linkText = "19\"")
     WebElement WheelSize19;
 
     @FindBy(linkText = "18\"")
@@ -38,6 +42,13 @@ public class WheelSizePage extends BasePage{
     @FindBy(linkText = "14\"")
     WebElement WheelSize14;
 
+    @FindBy(className = "cc-close__btn")
+    WebElement closeCookiesPopUp;
+
+    public void setCloseCookiesPopUp(){
+        waitForElementToAppear(closeCookiesPopUp);
+        closeCookiesPopUp.click();
+    }
     public void selectWheelSize22(){
         waitForElementToAppear(WheelSize22);
         WheelSize22.click();

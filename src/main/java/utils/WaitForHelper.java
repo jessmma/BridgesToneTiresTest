@@ -19,9 +19,20 @@ public class WaitForHelper extends Driver{
         driver.manage().timeouts().implicitlyWait(Integer.parseInt(PropertyReader.readItem("elementLoadTimeout")), TimeUnit.SECONDS);
     }
 
+    public void waitForSeconds(int secs) {
+        try {
+            Thread.sleep(1000 * secs);
+        } catch (InterruptedException e) {
+        }
+    }
+
     //Method for driver to wait until a Web Element is visible
     public WebElement presenceOfTheElement(WebElement elementIdentifier) {
         return new WebDriverWait(driver, 20)
                 .until(ExpectedConditions.visibilityOf(elementIdentifier));
+    }
+
+    public WebElement waitUntilClickable(WebElement elementIdentifier){
+        return new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(elementIdentifier));
     }
 }
