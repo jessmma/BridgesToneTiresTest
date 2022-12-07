@@ -1,6 +1,6 @@
 # Bridegestone Tire Size Count
 
-POM Test automation framework to count all tire sizes for all the wheel sizes on Bridgestone website.
+POM Test automation framework to count number of tire sizes for all the wheel sizes on Bridgestone website.
 ## Framework
 
 This is a POM framework that uses Selenium WebDriver, Java as a programming language and TestNG to maintain the automated tests. Maven is used in this framework as a build tool to manage dependencies.
